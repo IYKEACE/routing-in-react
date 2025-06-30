@@ -1,11 +1,21 @@
-import Home from "./home/Home";
-import About from "./about/About";
-import Contact from "./contact/Contact";
-import Product from "./product/Product";
-import Doctor from "./doctor/Doctor";
-import Apps from "./apps/Apps";
-import Services from "./services/Services";
-import Testimonial from "./testimonial/Testimonial";
-import Dashboard from "./dashboard/Dashboard";
+import About from "./about/About.jsx";
+import Contact from "./contact/Contact.jsx";
+import Home from "./home/Home.jsx";
+import Product from "./product/Product.jsx";
+import Doctor from "./doctor/Doctor.jsx";
+import Services from "./services/Services.jsx";
+import Testimonial from "./testimonial/Testimonial.jsx";
+import Dashboard from "./dashboard/Dashboard.jsx";
+import Apps from "./apps/Apps.jsx";
 
-export { Home, About, Contact, Product, Doctor, Apps, Services, Testimonial, Dashboard };
+export {
+  About,
+  Contact,
+  Home,
+  Product,
+  Doctor,
+  Services,
+  Testimonial,
+  Dashboard,
+  Apps,
+};

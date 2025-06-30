@@ -1,0 +1,29 @@
+.heroContainer{
+  margin-left: 2rem;
+}
+.heroContent {
+  display: flex;
+  justify-content: space-between;
+  /* align-items: center; */
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}
+.topHero {
+  margin-top: 5rem;
+  font-size: 20px;
+}
+.description {
+  color: #7D7987;
+}
+.img {
+  width: 95%;
+}
+.btn {
+  margin-top: 3rem;
+  padding: 15px 29px;
+  background: #458FF6;
+  color: #fff;
+  border: none;
+  border-radius: 34px;
+  cursor: pointer;
+}
