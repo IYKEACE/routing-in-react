@@ -2,9 +2,9 @@ import React from 'react'
 
 const Apps = () => {
   return (
-    <div>
+    <section className='container'>
       Apps
-    </div>
+    </section>
   )
 }
 

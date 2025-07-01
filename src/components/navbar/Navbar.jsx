@@ -1,7 +1,8 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import styles from "./navbar.module.css";
-
+import { VscMenu, VscChromeClose } from "react-icons/vsc";
 import { navbarData } from "../../utils/data";
+import { useState } from "react";
 
 const Navbar = () => {
   return (
@@ -13,10 +14,22 @@ const Navbar = () => {
         <ul className={styles.navLists}>
           {navbarData.map((item) => (
             <li className={styles.navList} key={item.id}>
-              <Link to={item.url}>{item.name}</Link>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive ? styles.activeLink : ""
+                }
+                to={item.url}
+              >
+                {item.name}
+              </NavLink>
             </li>
+            // isActive is a function that returns true or false based on the current URL and it also add a color to the active link on your navbar
           ))}
-        </ul>
+         </ul>
+        <div className={styles.icons}>
+          <VscMenu />
+          <VscChromeClose />
+        </div>
       </nav>
     </section>
   );

@@ -1,6 +1,3 @@
-.heroContainer{
-  margin-left: 2rem;
-}
 .heroContent {
   display: flex;
   justify-content: space-between;
@@ -13,7 +10,7 @@
   font-size: 20px;
 }
 .description {
-  color: #7D7987;
+  color: #7d7987;
 }
 .img {
   width: 95%;
@@ -21,7 +18,7 @@
 .btn {
   margin-top: 3rem;
   padding: 15px 29px;
-  background: #458FF6;
+  background: #458ff6;
   color: #fff;
   border: none;
   border-radius: 34px;
