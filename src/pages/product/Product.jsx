@@ -1,11 +1,33 @@
-import React from 'react'
+import React from "react";
+import styles from "./product.module.css";
 
 const Product = () => {
   return (
     <section className="container">
-      Product
+      <section className={styles.ProductContent}>
+        <section className={styles.topProduct}>
+          <h2>
+            Download our <br /> mobile apps
+          </h2>
+          <hr />
+          <p className={styles.ded}>
+            Our dedicated patient engagement app and <br />
+            web portal allow you to access information <br />
+            instantaneously (no tedeous form, long calls, <br />
+            or administrative hassle) and securely
+          </p>
+          <button className={styles.btn}>Downloads&#8681;</button>
+        </section>
+        <section className={styles.bottomProduct}>
+          <img
+            src="/public/downloads.png"
+            alt="downloads"
+            className={styles.down}
+          />
+        </section>
+      </section>
     </section>
-  )
-}
+  );
+};
 
-export default Product
+export default Product;

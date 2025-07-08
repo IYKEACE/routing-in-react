@@ -4,10 +4,11 @@ export const navbarData = [
     url: "/",
     name: "Home",
   },
+
   {
     id: 2,
     url: "/doctor",
-    name: "Doctor",
+    name: "Find a Doctor",
   },
   {
     id: 3,
@@ -17,12 +18,12 @@ export const navbarData = [
   {
     id: 4,
     url: "/testimonial",
-    name: "Testimonial",
+    name: "Testimonials",
   },
   {
     id: 5,
     url: "/about",
-    name: "About Us",
+    name: "About us",
   },
   {
     id: 6,
@@ -31,7 +32,17 @@ export const navbarData = [
   },
   {
     id: 7,
-    url: "/Services",
+    url: "/services",
     name: "Services",
   },
-]
+  {
+    id: 8,
+    url: "/auth/login",
+    name: "Login",
+  },
+  {
+    id: 9,
+    url: "/auth/register",
+    name: "Register",
+  },
+];

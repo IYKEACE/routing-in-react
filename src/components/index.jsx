@@ -3,5 +3,5 @@ import Navbar from "./navbar/Navbar";
 import Footer from "./footer/Footer";
 import Hero from "./hero/Hero";
 import NotFound from "./NotFound/NotFound";
-
-export { HomePage, Navbar, Footer, Hero, NotFound };
+import Testimonials from "./testimonials/Testimonials";
+export { HomePage, Navbar, Footer, Hero, NotFound, Testimonials };

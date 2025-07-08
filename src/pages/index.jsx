@@ -7,6 +7,11 @@ import Services from "./services/Services.jsx";
 import Testimonial from "./testimonial/Testimonial.jsx";
 import Dashboard from "./dashboard/Dashboard.jsx";
 import Apps from "./apps/Apps.jsx";
+import Profile from "./dashboard/profile/Profile.jsx";
+import Login from "./auth/login/Login.jsx";
+import Register from "./auth/register/Register.jsx";
+import Settings from "./dashboard/settings/Settings.jsx";
+import Users from "./dashboard/users/Users.jsx";
 
 export {
   About,
@@ -18,4 +23,9 @@ export {
   Testimonial,
   Dashboard,
   Apps,
+  Profile,
+  Login,
+  Register,
+  Settings,
+  Users,
 };

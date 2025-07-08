@@ -1,11 +1,34 @@
 import React from 'react'
+import styles from "./apps.module.css";
 
 const Apps = () => {
   return (
-    <section className='container'>
-      Apps
+    <section className="container">
+      <section className={styles.appContent}>
+        <section className={styles.topApp}>
+          <img
+            src="/public/providers.png"
+            alt="provider image"
+            className={styles.img}
+          />
+        </section>
+        <section className={styles.bottomApp}>
+          <h2 className={styles.lead}>
+            Leading healthcare <br />
+            providers
+            <hr />
+          </h2>
+          <p className={styles.tra}>
+            Trafalgar provides progressive, and affordable <br /> healthcare,
+            accessible on mobile and online for <br />
+            everyone. To us, it’s not just work. We take pride <br />
+            in the solutions we deliver
+          </p>
+          <button className={styles.btn}>Learn more</button>
+        </section>
+      </section>
     </section>
-  )
+  );
 }
 
 export default Apps

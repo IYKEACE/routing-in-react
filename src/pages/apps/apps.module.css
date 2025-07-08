@@ -1,0 +1,35 @@
+.appContent{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8rem;
+}
+.lead{
+  margin-top: 5rem;
+  margin-bottom: 2rem;
+}
+.bottomApp{
+  font-size: 20px;
+}
+.img{
+  width: 95%;
+}
+.tra{
+  color: #7d7987;
+}
+.btn{
+  padding: 10px 35px;
+  margin-top: 3rem;
+  border-radius: 2rem;
+  color: #4a90e2;
+  border: #4a90e2 solid 2px;
+  cursor: pointer;
+}
+hr {
+  /* border: none;
+  border-top: 2px solid #333;
+  width: 40px;
+  margin-left: 1.2rem;
+  margin-top: 1.2rem; */
+  /* margin: 18px auto 0 auto; */
+  /* display: block; */
+}
