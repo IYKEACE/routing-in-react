@@ -1,41 +1,21 @@
-import React from "react";
-import styles from "./testimonial.module.css";
-
 const Testimonial = () => {
   return (
-    <section className="container">
-      <section className={styles.testContainer}>
-        <h2 className={styles.head}>
-          What our customer are saying
-          <hr className={styles.line} />
-        </h2>
-        <section className={styles.testContent}>
-          <section className={styles.topTest}>
-            <div className={styles.man}>
-              <div className={styles.edwards}>
-                <img
-                  src="/public/edwards.png"
-                  alt="edward"
-                  className={styles.imo}
-                />
-              </div>
-              <div className={styles.term}>
-                <h2  className={styles.new}>Edward Newgate</h2>
-                <p className={styles.circle}>Founder Circle</p>
-              </div>
-            </div>
-          </section>
-          <section className={styles.bottomTest}>
-            <p className={styles.desc}>
-              “Our dedicated patient engagement app and <br />web portal allow you to
-              access information <br />instantaneously (no tedeous form, long calls,<br />
-              or administrative hassle) and securely”
-            </p>
-          </section>
-        </section>
-      </section>
-    </section>
+    <div className="container">
+      <h1>Testimonial</h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat
+        similique blanditiis, perferendis iure debitis autem! Et repellendus
+        ipsam inventore! Assumenda pariatur minus, nostrum porro eaque illum
+        earum labore est deleniti dolorem laudantium repellendus, similique
+        voluptate? Architecto debitis vitae, eligendi qui ipsa exercitationem,
+        provident nemo ad quas a quasi nisi non eius id beatae assumenda culpa
+        explicabo enim expedita earum in aliquam distinctio! Ducimus neque
+        aperiam quisquam debitis cupiditate perspiciatis hic iste alias quas
+        maxime. Delectus, sit voluptatem fuga molestias nobis quae esse aut
+        numquam cumque! Ducimus nulla dicta aut odio recusandae necessitatibus,
+        perferendis placeat provident, minus ad, tempora enim ab!
+      </p>
+    </div>
   );
 };
-
 export default Testimonial;

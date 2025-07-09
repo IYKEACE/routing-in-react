@@ -1,13 +1,16 @@
-import { Hero } from "../../components";
-import { Services, Testimonial, Apps, Product, } from "../../pages/index";
+import { Hero, Comment, Ourservices, Providers } from "../../components";
+import { Services, Testimonial, Apps, Product } from "../../pages/index";
 const Home = () => {
   return (
     <>
       <Hero />
-      <Services />
-      <Apps />
+      <Ourservices />
+      {/* <Services /> */}
+      {/* <Apps /> */}
+      <Providers />
       <Product />
-      <Testimonial />
+      {/* <Testimonial /> */}
+      <Comment />
     </>
   );
 };
