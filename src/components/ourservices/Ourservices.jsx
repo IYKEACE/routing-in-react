@@ -28,7 +28,7 @@ const Ourservices = () => {
               </p>
             </div>
             <div className={styles.servicesOne}>
-              <img src="/public/pharmacy.png" alt="Doctor" className={styles.pix} />
+              <img src="/pharmacy.png" alt="Doctor" className={styles.pix} />
               <h3>Online pharmacy</h3>
               <p className={styles.desc}>
                 Buy your medicines with our <br /> mobile application with a simple
@@ -38,7 +38,7 @@ const Ourservices = () => {
             </div>
             <div className={styles.servicesOne}>
               <img
-                src="/public/consultation.png"
+                src="/consultation.png"
                 alt="Doctor"
                 className={styles.pix}
               />
@@ -49,7 +49,7 @@ const Ourservices = () => {
               </p>
             </div>
             <div className={styles.servicesOne}>
-              <img src="/public/details.png" alt="Doctor" className={styles.pix} />
+              <img src="/details.png" alt="Doctor" className={styles.pix} />
               <h3>Details info</h3>
               <p className={styles.desc}>
                 Free consultation with our trusted <br />
@@ -60,7 +60,7 @@ const Ourservices = () => {
             </div>
             <div className={styles.servicesOne}>
               <img
-                src="/public/emergency.png"
+                src="/emergency.png"
                 alt="Doctor"
                 className={styles.pix}
               />
@@ -72,7 +72,7 @@ const Ourservices = () => {
               </p>
             </div>
             <div className={styles.servicesOne}>
-              <img src="/public/tracking.png" alt="Doctor" className={styles.pix} />
+              <img src="/tracking.png" alt="Doctor" className={styles.pix} />
               <h3>Tracking</h3>
               <p className={styles.desc}>
                 Track and save your medical history <br />

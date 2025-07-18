@@ -22,7 +22,7 @@ const Navbar = () => {
     <section className="container">
       <nav>
         <section className={styles.topHero}>
-          <img src="/public/logo (1).png" alt="Logo" className={styles.image} />
+          <img src="/logo (1).png" alt="Logo" className={styles.image} />
         </section>
         {/* Mobile menu icon */}
         <div className={styles.icons} onClick={handleMenuToggle}>
