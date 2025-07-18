@@ -25,9 +25,6 @@
   cursor: pointer;
 }
 
-
-
-
 @media screen and (max-width: 768px) {
   .heroContent {
     flex-direction: column;
@@ -49,5 +46,4 @@
     width: fit-content;
     padding: 12px 24px;
   }
-  
 }

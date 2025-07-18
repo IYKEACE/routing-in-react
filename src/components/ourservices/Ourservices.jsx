@@ -17,7 +17,7 @@ const Ourservices = () => {
           <div className={styles.serviceContent}>
             <div className={styles.servicesOne}>
               <img
-                src="/public/search-doctors.png"
+                src="/search-doctors.png"
                 alt="Doctor"
                 className={styles.pix}
               />

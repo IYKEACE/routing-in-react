@@ -19,7 +19,7 @@ const Hero = () => {
         </section>
         <section className={styles.bottomHero}>
           <img
-            src="/public/trafalgar-header 1.png"
+            src="/trafalgar-header 1.png"
             alt="hero image"
             className={styles.img}
           />

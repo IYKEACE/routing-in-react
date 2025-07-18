@@ -52,12 +52,9 @@
   margin-top: 2.5rem;
   color: #ffffff;
 }
-.out{
+.out {
   margin-bottom: 5px;
 }
-
-
-
 
 @media screen and (max-width: 768px) {
   .footerContainer {
@@ -75,10 +72,12 @@
   .circle {
     margin-top: 0;
   }
-  .rat, .rig, .com, .hug {
+  .rat,
+  .rig,
+  .com,
+  .hug {
     text-align: center;
     margin-left: 0;
     margin-right: 0;
   }
-  
 }

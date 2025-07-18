@@ -1,22 +1,22 @@
-.appContent{
+.appContent {
   display: flex;
   justify-content: space-between;
   margin-top: 8rem;
 }
-.lead{
+.lead {
   margin-top: 5rem;
   margin-bottom: 2rem;
 }
-.bottomApp{
+.bottomApp {
   font-size: 20px;
 }
-.img{
+.img {
   width: 95%;
 }
-.tra{
+.tra {
   color: #7d7987;
 }
-.btn{
+.btn {
   padding: 10px 35px;
   margin-top: 3rem;
   border-radius: 2rem;
@@ -24,7 +24,14 @@
   border: #4a90e2 solid 2px;
   cursor: pointer;
 }
-
+.lines {
+  border: none;
+  border-top: 2px solid #333;
+  width: 40px;
+  margin: 16px 0 0 0; /* top margin, no left/right auto */
+  display: block;
+  text-align: left; /* not required for hr, but fine */
+}
 
 @media screen and (max-width: 768px) {
   .appContent {
@@ -35,12 +42,16 @@
     text-align: center;
     margin-top: 2rem;
   }
-  .bottomApp{
+  .bottomApp {
     flex: wrap;
   }
-  .btn{
+  .btn {
     width: 100%;
     text-align: center;
     margin: 2rem auto; /* centers horizontally and adds top margin */
+  }
+  .lines {
+    margin: 16px auto 0 auto; /* top margin, auto left/right centers it */
+    display: block;
   }
 }
