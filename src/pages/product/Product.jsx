@@ -1,32 +1,20 @@
 import React from "react";
-import styles from "./product.module.css";
 
 const Product = () => {
   return (
-    <section className="container">
-      <section className={styles.ProductContent}>
-        <section className={styles.topProduct}>
-          <h2>
-            Download our <br /> mobile apps
-          </h2>
-          <hr />
-          <p className={styles.ded}>
-            Our dedicated patient engagement app and <br />
-            web portal allow you to access information <br />
-            instantaneously (no tedeous form, long calls, <br />
-            or administrative hassle) and securely
-          </p>
-          <button className={styles.btn}>Downloads&#8681;</button>
-        </section>
-        <section className={styles.bottomProduct}>
-          <img
-            src="/public/downloads.png"
-            alt="downloads"
-            className={styles.down}
-          />
-        </section>
-      </section>
-    </section>
+    <div className="container">
+      <h1>Product</h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic numquam
+        dolorum totam repellendus dolores sapiente iste quis nulla, consequuntur
+        sit tenetur ipsa, excepturi nostrum quod delectus, tempore praesentium
+        in similique? Quod alias quidem pariatur amet, nesciunt perspiciatis
+        sapiente repudiandae fuga? Modi voluptate porro esse, velit, reiciendis
+        sapiente cupiditate nisi ipsa aperiam enim corrupti maxime molestias
+        numquam quos eligendi, mollitia quas quaerat itaque fugit quod libero
+        quo. Corrupti, ratione deserunt. Suscipit.
+      </p>
+    </div>
   );
 };
 

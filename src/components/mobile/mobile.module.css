@@ -1,46 +1,48 @@
-.appContent{
+.ProductContent{
   display: flex;
   justify-content: space-between;
   margin-top: 8rem;
+  margin-bottom: 5rem;
 }
-.lead{
-  margin-top: 5rem;
-  margin-bottom: 2rem;
-}
-.bottomApp{
+.topProduct{
+  margin-top: 3rem;
   font-size: 20px;
+  margin-bottom: 3rem;
 }
-.img{
-  width: 95%;
-}
-.tra{
+.ded{
   color: #7d7987;
+  margin-top: 2rem;
 }
 .btn{
-  padding: 10px 35px;
+  padding: 15px 35px;
   margin-top: 3rem;
   border-radius: 2rem;
   color: #4a90e2;
   border: #4a90e2 solid 2px;
   cursor: pointer;
 }
+.down{
+  width: 95%;
+}
 
 
 @media screen and (max-width: 768px) {
-  .appContent {
-    flex-direction: column-reverse;
+  .ProductContent{
+    flex-direction: column;
     align-items: center;
   }
-  .lead {
+  .topProduct{
     text-align: center;
-    margin-top: 2rem;
   }
-  .bottomApp{
-    flex: wrap;
+  .ded{
+    text-align: center;
   }
   .btn{
     width: 100%;
     text-align: center;
-    margin: 2rem auto; /* centers horizontally and adds top margin */
   }
+  .down{
+    width: 100%;
+  }
+  
 }

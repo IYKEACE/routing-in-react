@@ -14,11 +14,9 @@ const Navbar = () => {
   const location = useLocation();
   console.log(location);
 
-  
   useEffect(() => {
     setMenuOpen((prev) => !prev);
   }, [location]);
-
 
   return (
     <section className="container">

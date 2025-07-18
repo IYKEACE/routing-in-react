@@ -1,5 +1,6 @@
 .head {
   text-align: center;
+  font-size: 30px;
 }
 hr {
   border: none;
@@ -16,9 +17,12 @@ hr {
 .serviceContent {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  gap: 7rem;
-  margin-top: 10rem;
+  justify-content: center; 
+  align-items: center;
+  gap: 2rem; 
+  /* margin-top: 2rem;  */
+  padding: 0 2rem; 
+  /* background-color: #000; */
 }
 .servicesOne {
   border-radius: 1rem;
@@ -49,4 +53,25 @@ h3 {
   border: #4a90e2 solid 2px;
   cursor: pointer;
   margin-top: 2rem;
+}
+
+
+
+/* MEDIA QUERIES */
+
+@media screen and (max-width: 768px) {
+  .serviceContent {
+    flex-direction: column; /* stack items vertically on smaller screens */
+    align-items: center; /* center items */
+    gap: 1.5rem; /* add some space between items */
+  }
+  .servicesOne {
+    width: 100%; /* make each service take full width on small screens */
+    max-width: 400px; /* limit the maximum width for better readability */
+  }
+  .btn {
+    width: fit-content; /* shrink to fit content */
+    padding: 12px 24px;
+  }
+  
 }

@@ -19,6 +19,7 @@ import {
 import Layout from "./layout/Layout";
 import AuthLayout from "./authlayout/AuthLayout";
 import { NotFound } from "./components/index";
+import ProtectedRoute from "./utils/ProtectedRoute";
 
 const App = () => {
   return (
@@ -39,17 +40,26 @@ const App = () => {
           {/* routes with navbar and footer */}
 
           {/* routes without navbar and footer */}
+
+          {/* auth start */}
           <Route element={<AuthLayout />}>
             <Route path="/auth/login" element={<Login />} />
             <Route path="/auth/register" element={<Register />} />
           </Route>
           {/* routes without navbar and footer */}
 
-          {/* auth start */}
+          {/* auth end */}
 
           {/* dashboard start */}
           <Route element={<AuthLayout />}>
-            <Route path="/dashboard" element={<Dashboard />}>
+            <Route
+              path="/dashboard"
+              element={
+                <ProtectedRoute>
+                  <Dashboard />
+                </ProtectedRoute>
+              }
+            >
               <Route path="/dashboard/profile" element={<Profile />} />
               <Route path="/dashboard/settings" element={<Settings />} />
               <Route path="/dashboard/users" element={<Users />} />

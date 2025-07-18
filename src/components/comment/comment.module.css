@@ -1,8 +1,11 @@
 .testContainer{
   background: linear-gradient(208.18deg, #67C3F3 9.05%, #5A98F2 76.74%);
   padding: 4rem 2rem;
+  width: 98%;
+  margin: 2rem auto 0 auto; 
   border-radius: 20px;
   margin-top: 8rem;
+  margin-bottom: 12rem;
 }
 .testContent{
   display: flex;
@@ -46,4 +49,19 @@
 .desc{
   color: #fff;
   font-size: 14px;
+}
+
+
+@media screen and (max-width: 768px) {
+  .testContent {
+    flex-direction: column;
+    align-items: center;
+  }
+  .head {
+    font-size: 20px;
+  }
+  .imo {
+    width: 80px;
+  }
+  
 }
