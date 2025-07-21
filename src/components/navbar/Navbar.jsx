@@ -8,7 +8,9 @@ import { navbarData } from "../../utils/data";
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const handleMenuToggle = () => setMenuOpen((prev) => !prev);
+  const handleMenuToggle = () => {
+    setMenuOpen((prev) => !prev);
+  };
 
   // handle location
   const location = useLocation();
@@ -37,7 +39,7 @@ const Navbar = () => {
                   isActive ? styles.activeLink : ""
                 }
                 to={item.url}
-                onClick={() => setMenuOpen(false)} // close menu on link click activeLink
+                // onClick={() => setMenuOpen(false)} // close menu on link click activeLink
               >
                 {item.name}
               </NavLink>
