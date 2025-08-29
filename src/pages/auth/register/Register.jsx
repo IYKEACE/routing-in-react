@@ -17,8 +17,21 @@ const Register = () => {
     address: "",
   });
 
+  // Handle text input changes
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  // Handle profile picture upload
+  const handleProfileChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setForm((prev) => ({ ...prev, profile: reader.result }));
+      };
+      reader.readAsDataURL(file);
+    }
   };
 
   const handleSubmit = (e) => {
@@ -33,6 +46,15 @@ const Register = () => {
         <h1 className={styles.title}>Register</h1>
         <div className={styles.profilePicWrap}>
           <img src={form.profile} alt="Profile" className={styles.profilePic} />
+        </div>
+        <div className={styles.formGroup}>
+          <label className={styles.label}>Profile Picture</label>
+          <input
+            className={styles.input}
+            type="file"
+            accept="image/*"
+            onChange={handleProfileChange}
+          />
         </div>
         <div className={styles.row}>
           <div className={styles.formGroup}>
