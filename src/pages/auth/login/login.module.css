@@ -1,146 +1,126 @@
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  background: linear-gradient(135deg, #6e8efb, #a777e3);
-  padding: 20px;
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.loginCard {
-  background: white;
-  padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+.container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f5f7fa;
+  animation: fadeInUp 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.form {
+  background: #fff;
+  padding: 2.5rem 2rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
   width: 100%;
-  max-width: 400px;
+  max-width: 350px;
+  animation: fadeInUp 1s 0.2s both;
 }
 
 .title {
   text-align: center;
-  margin-bottom: 0.5rem;
-  color: #2d3748;
-  font-size: 1.8rem;
-}
-
-.subtitle {
-  text-align: center;
-  margin-bottom: 1.5rem;
-  color: #718096;
-}
-
-.form {
-  margin-bottom: 1.5rem;
-}
-
-.inputGroup {
-  margin-bottom: 1.5rem;
-}
-
-.label {
-  display: block;
-  margin-bottom: 0.5rem;
-  color: #4a5568;
-  font-weight: 500;
+  margin-bottom: 1rem;
+  color: #333;
+  font-size: 2rem;
+  font-weight: 600;
 }
 
 .input {
-  width: 100%;
-  padding: 0.75rem;
-  border: 1px solid #e2e8f0;
-  border-radius: 4px;
+  padding: 0.8rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
   font-size: 1rem;
+  outline: none;
+  transition: border 0.2s;
 }
 
 .input:focus {
-  outline: none;
-  border-color: #6e8efb;
-  box-shadow: 0 0 0 3px rgba(110, 142, 251, 0.1);
+  border-color: #4a90e2;
 }
 
-.input.error {
-  border-color: #e53e3e;
-}
-
-.errorText {
-  color: #e53e3e;
-  font-size: 0.875rem;
-  margin-top: 0.25rem;
-  display: block;
-}
-
-.errorMessage {
-  background-color: #fed7d7;
-  color: #c53030;
-  padding: 0.75rem;
-  border-radius: 4px;
-  margin-bottom: 1.5rem;
-  font-size: 0.875rem;
-  text-align: center;
-}
-
-.rememberForgot {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 1.5rem;
-}
-
-.rememberMe {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  color: #4a5568;
-  cursor: pointer;
-}
-
-.rememberMe input {
-  cursor: pointer;
-}
-
-.forgotLink {
-  color: #6e8efb;
-  text-decoration: none;
-  font-size: 0.9rem;
-}
-
-.forgotLink:hover {
-  text-decoration: underline;
-}
-
-.loginButton {
-  width: 100%;
-  padding: 0.75rem;
-  background: #6e8efb;
-  color: white;
+.button {
+  padding: 0.8rem 1rem;
+  background: #4a90e2;
+  color: #fff;
   border: none;
-  border-radius: 4px;
+  border-radius: 6px;
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.2s;
+  transition: background 0.2s;
 }
 
-.loginButton:hover:not(:disabled) {
-  background: #5a67d8;
+.button:hover {
+  background: #357ab8;
 }
 
-.loginButton:disabled {
-  opacity: 0.7;
-  cursor: not-allowed;
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
 }
 
-.signupLink {
-  text-align: center;
-  color: #718096;
-}
-
-.link {
-  color: #6e8efb;
-  text-decoration: none;
+.label {
+  font-size: 1rem;
+  color: #333;
   font-weight: 500;
 }
 
-.link:hover {
+.forgotRow {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 0.5rem;
+}
+
+.forgot {
+  color: #4a90e2;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: text-decoration 0.2s;
+}
+
+.forgot:hover {
   text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .form {
+    max-width: 98vw;
+    padding: 1.5rem 0.5rem;
+  }
+  .title {
+    font-size: 1.5rem;
+  }
+}
+@media (max-width: 600px) {
+  .form {
+    max-width: 98vw;
+    padding: 1.5rem 0.5rem;
+  }
+  .title {
+    font-size: 1.3rem;
+  }
+}
+/* Add for extra small screens */
+@media (max-width: 400px) {
+  .form {
+    padding: 1rem 0.2rem;
+  }
+  .title {
+    font-size: 1.1rem;
+  }
 }

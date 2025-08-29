@@ -1,242 +1,141 @@
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  background: linear-gradient(135deg, #6e8efb, #a777e3);
-  padding: 20px;
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.registerCard {
-  background: white;
-  padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+.container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f5f7fa;
+  animation: fadeInUp 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.form {
+  background: #f5f7fa;
+  padding: 2.5rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 24px rgba(0,0,0,0.10);
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
   width: 100%;
-  max-width: 500px;
+  max-width: 600px;
+  animation: fadeInUp 1s 0.2s both;
 }
 
 .title {
   text-align: center;
-  margin-bottom: 0.5rem;
-  color: #2d3748;
-  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #333;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 1px;
 }
 
-.subtitle {
-  text-align: center;
-  margin-bottom: 1.5rem;
-  color: #718096;
-}
-
-.form {
-  margin-bottom: 1.5rem;
-}
-
-.profileSection {
+.profilePicWrap {
   display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin-bottom: 1.5rem;
+  justify-content: center;
+  margin-bottom: 1rem;
+  animation: fadeInUp 1.2s 0.4s both;
 }
 
-.imagePreview {
-  width: 80px;
-  height: 80px;
+.profilePic {
+  width: 70px;
+  height: 70px;
   border-radius: 50%;
-  overflow: hidden;
-  border: 3px solid #e2e8f0;
-}
-
-.profileImage {
-  width: 100%;
-  height: 100%;
   object-fit: cover;
+  border: 3px solid #4a90e2;
+  box-shadow: 0 2px 8px rgba(74,144,226,0.15);
+  background: #fff;
 }
 
-.imageUpload {
-  flex: 1;
-}
-
-.uploadLabel {
-  display: inline-block;
-  padding: 0.5rem 1rem;
-  background: #f7fafc;
-  color: #4a5568;
-  border: 1px dashed #cbd5e0;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 0.9rem;
-}
-
-.uploadLabel:hover {
-  background: #edf2f7;
-}
-
-.fileInput {
-  display: none;
-}
-
-.nameRow {
+.row {
   display: flex;
   gap: 1rem;
-  margin-bottom: 1rem;
 }
 
-.nameRow .inputGroup {
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
   flex: 1;
-}
-
-.inputGroup {
-  margin-bottom: 1rem;
 }
 
 .label {
-  display: block;
-  margin-bottom: 0.5rem;
-  color: #4a5568;
+  font-size: 1rem;
+  color: #333;
   font-weight: 500;
 }
 
-.input, .textarea {
-  width: 100%;
-  padding: 0.75rem;
-  border: 1px solid #e2e8f0;
-  border-radius: 4px;
+.input {
+  padding: 0.8rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
   font-size: 1rem;
-}
-
-.input:focus, .textarea:focus {
   outline: none;
-  border-color: #6e8efb;
-  box-shadow: 0 0 0 3px rgba(110, 142, 251, 0.1);
+  transition: border 0.2s;
+  background: #f9fafb;
 }
 
-.input.error, .textarea.error {
-  border-color: #e53e3e;
+.input:focus {
+  border-color: #4a90e2;
+  background: #fff;
 }
 
-.textarea {
-  resize: vertical;
-  min-height: 80px;
-  font-family: inherit;
-}
-
-.errorText {
-  color: #e53e3e;
-  font-size: 0.875rem;
-  margin-top: 0.25rem;
-  display: block;
-}
-
-.errorMessage {
-  background-color: #fed7d7;
-  color: #c53030;
-  padding: 0.75rem;
-  border-radius: 4px;
-  margin-bottom: 1rem;
-  font-size: 0.875rem;
-}
-
-.roleOptions {
-  display: flex;
-  gap: 1.5rem;
-  margin-top: 0.5rem;
-}
-
-.roleOption {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  cursor: pointer;
-}
-
-.roleOption input {
-  cursor: pointer;
-}
-
-.jobRolesGrid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 0.75rem;
-  margin-top: 0.5rem;
-}
-
-.jobRoleOption {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  cursor: pointer;
-  font-size: 0.9rem;
-  padding: 0.5rem;
-  border: 1px solid #e2e8f0;
-  border-radius: 4px;
-  transition: background-color 0.2s;
-}
-
-.jobRoleOption:hover {
-  background-color: #f7fafc;
-}
-
-.jobRoleOption input {
-  cursor: pointer;
-}
-
-.registerButton {
-  width: 100%;
-  padding: 0.75rem;
-  background: #6e8efb;
-  color: white;
+.button {
+  padding: 0.8rem 1rem;
+  background: linear-gradient(90deg, #4a90e2 60%, #357ab8 100%);
+  color: #fff;
   border: none;
-  border-radius: 4px;
+  border-radius: 6px;
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
   margin-top: 1rem;
-  transition: background-color 0.2s;
+  box-shadow: 0 2px 8px rgba(74,144,226,0.10);
+  transition: background 0.2s, transform 0.2s;
+  animation: fadeInUp 1.3s 0.6s both;
 }
 
-.registerButton:hover:not(:disabled) {
-  background: #5a67d8;
+.button:hover {
+  background: linear-gradient(90deg, #357ab8 60%, #4a90e2 100%);
+  transform: translateY(-2px) scale(1.03);
 }
 
-.registerButton:disabled {
-  opacity: 0.7;
-  cursor: not-allowed;
-}
 
-.loginLink {
-  text-align: center;
-  color: #718096;
-}
-
-.link {
-  color: #6e8efb;
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.link:hover {
-  text-decoration: underline;
-}
-
-/* Responsive design */
-@media (max-width: 600px) {
-  .jobRolesGrid {
-    grid-template-columns: 1fr;
+@media (max-width: 768px) {
+  .form {
+    max-width: 98vw;
+    padding: 1.5rem 0.5rem;
   }
-  
-  .nameRow {
-    flex-direction: column;
-    gap: 0;
-  }
-  
-  .roleOptions {
+  .row {
     flex-direction: column;
     gap: 0.5rem;
   }
-  
-  .registerCard {
-    padding: 1.5rem;
+}
+@media (max-width: 600px) {
+  .form {
+    max-width: 98vw;
+    padding: 1.5rem 0.5rem;
+  }
+  .row {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+@media (max-width: 400px) {
+  .form {
+    padding: 1rem 0.2rem;
+  }
+  .title {
+    font-size: 1.3rem;
   }
 }
