@@ -1,11 +1,10 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import styles from "./login.module.css";
+import styles from "./forgotpassword.module.css";
 
-const Login = () => {
-  const [formData, setFormData] = useState({ email: "", password: "" });
-  const [message, setMessage] = useState("");
+const ForgotPassword = () => {
+  const [formData, setFormData] = useState({ email: "" });
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -19,21 +18,24 @@ const Login = () => {
     e.preventDefault();
 
     try {
-      const res = await fetch("http://localhost:2025/api/v1/auth/login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
+      const res = await fetch(
+        "http://localhost:2025/api/v1/auth/forgot-password",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(formData),
+        }
+      );
       console.log("RES", res);
       const data = await res.json();
-      console.log("DATA LOGIN VALUES", data);
+      console.log("DATA FORGOT PASSWORD VALUES", data);
 
       if (res.status === 200) {
-        toast.success(data.message || "Login successful!");
-        // Redirect to dashboard page
-        navigate("/auth/dashboard");
+        toast.success(data.message || "Password reset email sent!");
+        // Redirect to login page
+        navigate("/auth/verify-otp");
       } else {
-        toast.error(data.error || "Login failed");
+        toast.error(data.error || "Unable to send reset email");
       }
     } catch (error) {
       console.error(error);
@@ -47,23 +49,14 @@ const Login = () => {
         Home
       </Link>
       <form onSubmit={handleSubmit}>
-        <h1>Login</h1>
+        <h1>Forgot Password</h1>
+        <p>Enter your email address to reset your password</p>
         <div>
           <input
             name="email"
             type="email"
             placeholder="Enter email"
             value={formData.email}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div>
-          <input
-            name="password"
-            type="password"
-            placeholder="Enter password"
-            value={formData.password}
             onChange={handleChange}
             required
           />
@@ -87,4 +80,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default ForgotPassword;

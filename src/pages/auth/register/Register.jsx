@@ -1,136 +1,124 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import { Link, useNavigate } from "react-router-dom";
 import styles from "./register.module.css";
-
-const defaultProfile =
-  "https://cdn.pixabay.com/photo/2020/06/29/20/31/man-5354308_1280.png";
+// import "./register.module.css";
 
 const Register = () => {
-  const navigate = useNavigate();
-  const [form, setForm] = useState({
+  const [formData, setFormData] = useState({
     firstname: "",
     lastname: "",
-    role: "",
-    profile: defaultProfile,
     email: "",
-    password: "",
     address: "",
+    password: "",
   });
 
-  // Handle text input changes
+  const navigate = useNavigate();
+
+  // function to handle change
   const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
   };
 
-  // Handle profile picture upload
-  const handleProfileChange = (e) => {
-    const file = e.target.files[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onloadend = () => {
-        setForm((prev) => ({ ...prev, profile: reader.result }));
-      };
-      reader.readAsDataURL(file);
+  // handleSumbit
+  const handleSumbit = async (e) => {
+    e.preventDefault();
+
+    try {
+      //
+      const res = await fetch("http://localhost:2025/api/v1/auth/create-user", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+      console.log("RES", res);
+      const data = await res.json();
+      console.log("DATA REGISTER VALUES", data);
+      if (res.status === 201) {
+        // or show a success message
+        toast.success(data.message || "Registered successfully");
+        // Redirect to login page
+        navigate("/auth/login");
+      } else {
+        console.log(data.error);
+        toast.error(data.error || "Registration failed");
+      }
+    } catch (error) {
+      console.error(error);
+      toast.error(error.message || "Registration failed");
     }
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    localStorage.setItem("user", JSON.stringify(form));
-    navigate("/login");
-  };
-
   return (
-    <div className={styles.container}>
-      <form className={styles.form} onSubmit={handleSubmit}>
-        <h1 className={styles.title}>Register</h1>
-        <div className={styles.profilePicWrap}>
-          <img src={form.profile} alt="Profile" className={styles.profilePic} />
-        </div>
-        <div className={styles.formGroup}>
-          <label className={styles.label}>Profile Picture</label>
+    <div className="container">
+      <Link to="/" className={styles.homeLink}>
+        Home
+      </Link>
+      <form onSubmit={handleSumbit}>
+        <h1>Register</h1>
+        <div>
           <input
-            className={styles.input}
-            type="file"
-            accept="image/*"
-            onChange={handleProfileChange}
-          />
-        </div>
-        <div className={styles.row}>
-          <div className={styles.formGroup}>
-            <label className={styles.label}>First Name</label>
-            <input
-              className={styles.input}
-              type="text"
-              name="firstname"
-              value={form.firstname}
-              onChange={handleChange}
-              required
-            />
-          </div>
-          <div className={styles.formGroup}>
-            <label className={styles.label}>Last Name</label>
-            <input
-              className={styles.input}
-              type="text"
-              name="lastname"
-              value={form.lastname}
-              onChange={handleChange}
-              required
-            />
-          </div>
-        </div>
-        <div className={styles.formGroup}>
-          <label className={styles.label}>Role</label>
-          <input
-            className={styles.input}
+            name="firstname"
             type="text"
-            name="role"
-            placeholder="e.g. Frontend, Backend, UI/UX"
-            value={form.role}
+            placeholder="enter firstname"
+            id="firstname"
+            value={formData.firstname}
             onChange={handleChange}
-            required
           />
         </div>
-        <div className={styles.formGroup}>
-          <label className={styles.label}>Email</label>
+        <div>
           <input
-            className={styles.input}
-            type="email"
+            name="lastname"
+            type="text"
+            placeholder="enter lastname"
+            id="lastname"
+            value={formData.lastname}
+            onChange={handleChange}
+          />
+        </div>
+        <div>
+          <input
             name="email"
-            value={form.email}
+            type="email"
+            placeholder="enter email"
+            id="email"
+            value={formData.email}
             onChange={handleChange}
-            required
           />
         </div>
-        <div className={styles.formGroup}>
-          <label className={styles.label}>Password</label>
+        <div>
           <input
-            className={styles.input}
-            type="password"
             name="password"
-            value={form.password}
+            type="password"
+            placeholder="enter password"
+            id="password"
+            value={formData.password}
             onChange={handleChange}
-            required
           />
         </div>
-        <div className={styles.formGroup}>
-          <label className={styles.label}>Address</label>
+
+        <div>
           <input
-            className={styles.input}
-            type="text"
             name="address"
-            value={form.address}
+            type="text"
+            placeholder="enter address"
+            id="address"
+            value={formData.address}
             onChange={handleChange}
-            required
           />
         </div>
-        <button className={styles.button} type="submit">
-          Register
-        </button>
+        <div className={styles.authLinkContainer}>
+          <p>Already have an account? </p>
+          <Link className={styles.authLink} to="/auth/login">
+            Login
+          </Link>
+        </div>
+        <button type="submit">Submit</button>
       </form>
     </div>
   );
 };
-
 export default Register;

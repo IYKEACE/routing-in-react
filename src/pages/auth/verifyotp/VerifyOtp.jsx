@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import styles from "./login.module.css";
 
-const Login = () => {
+const VerifyOtp = () => {
   const [formData, setFormData] = useState({ email: "", password: "" });
   const [message, setMessage] = useState("");
   const navigate = useNavigate();
@@ -87,4 +87,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default VerifyOtp;
